@@ -31,7 +31,7 @@ jobs:
             - name: "运行 【现在只能获取手动提交助力码】"
               run: |
                   node Ponysitters_Club_Season.js 
-               env:
+              env:
                   JD_COOKIE: ${{ secrets.JD_COOKIE }}
                   SYNCURL: /CASH.js
                   SCKEY: ${{ secrets.SCKEY }}
