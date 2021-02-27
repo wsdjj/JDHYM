@@ -5,8 +5,9 @@
  #基于 lxk0301 大佬的版本基础上做了格式划打印调整 
    #已支持IOS双京东账号, Node.js支持N个京东账号 
  #脚本兼容: QuantumultX, Surge, Loon, 小火箭，JSBox, Node.js 
- name: AA现在只能获取手动提交助力码 
+name: AA现在只能获取手动提交助力码 
  
+
 on:
     # push:
     #     branches:
