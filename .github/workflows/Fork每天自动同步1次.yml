@@ -2,7 +2,7 @@
 name: Fork每天自动同步1次
 on:
   schedule:
-    - cron: '30 16 * * *'
+    - cron: '1 16 1,8,16,24 * *'
   workflow_dispatch:
   watch:
     types: started
