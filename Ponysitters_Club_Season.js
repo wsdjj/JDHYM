@@ -2,6 +2,7 @@
 // create by ruicky
 // detail url: https://github.com/ruicky/jd_sign_bot
 /*
+2020.3.5增加内置互助码填写
 
 　BBC2历史电视电影系列《空王冠》（The Hollow Crown）4部经典莎士比亚作品的新演绎，分别是：《理查二世》（Richard II）、《亨利四世：第一部》（Henry IV, Part 1）、《亨利四世：第二部》（Henry IV, Part 2）和《亨利五 世》（Henry V）。在2012年伦敦奥运会期间，为了向全世界展现英国文化，这四部电视电影将作为伦敦文化奥运的重点推荐剧目向全世界推行，在2012年6月播出。　　《亨利四世》是该系列的第二部。夺取理查二世权势的亨利四世，将由奥斯卡影帝杰瑞米·艾恩斯 Jeremy Irons饰演，将由《丑闻纪事》的导演理查德·艾尔掌镜，在《复仇者联盟》中雷神弟弟“洛基”汤姆·希德勒斯顿 Tom Hiddleston将饰演Prince Hal，西蒙·拉塞尔·比尔 Simon Russell Beale饰演约翰·福斯塔夫爵士，艾伦·阿姆斯特朗 Alun Armstrong饰演诺森伯兰伯爵。　　《亨利四世》展现了英国中世纪时期迷人的历史，并将演绎出近年来最野心勃勃的一部莎士比亚改编作品。《亨利四世》是莎士比亚历史剧中最成功、最受欢迎的一部，被看成莎士比亚历史剧的代表作。这部作品的主要内容是反映亨利四世和他的王子们与反叛的诸侯贵族进行殊死斗争的过程。莎士比亚突破传统历史剧多条线索交织发展的网状结构，采用了两条线索平行发展的结构——以亨利四世为代表的宫廷生活线索和以福斯塔夫为代表的市井生活线索。
 
@@ -51,10 +52,21 @@ const JXNCTOKENS = process.env.JXNCTOKENS; //京戏农场种子
 
 
 
+let NCShareCodes=[""];//京东农厂
+let JCShareCodes=[""];//惊喜工厂
+let DCShareCodes=[""];//东东农场
+let MCShareCodes=[""];//萌宠
+let MHShareCodes=[""];//京东盲盒
+let ZDShareCodes=[""];//种豆
+let ASShareCodes=[""];//签到领现金
 
+//格式["AA","BB","CC"]
+
+//当前互助码活动(动态更新中):['NC@京东农场', 'AS@签到领现金', 'MC@萌宠', 'JC@惊喜工厂', 'DC@京东工厂', 'ZD@种豆', 'MH@盲盒']
 
 let CookieJDs = [];
 let shareCodes=[];
+
 async function downFile() {
    
     await download(SyncUrl, "./",{filename:'temp.js'});
@@ -77,7 +89,8 @@ async function changeFiele(content, cookie) {
       console.log(`木有互助码数据，请在secret中加入朱丽娜网址`);
       else
      newContent =newContent.replace(`https://raw.githubusercontent.com/jd1994527314/iosrule/cs/JD_TG`, `${HELPURL}` );
-    
+     
+//newContent=AddFirstCode(newContent);
      
       await fs.writeFileSync( './temp.js', newContent, 'utf8')
     
@@ -116,14 +129,14 @@ async function executeOneByOne() {
           
   } else if (SyncUrl.indexOf('jd_get_share_code')>0) 
   {
-     console.log(rcontent);
+     console.log(hideme(rcontent,0));
        } 
  else    
 
   {
          
-       console.log(hideme(rcontent));
-//console.log(rcontent);
+       console.log(hideme(rcontent,1));
+
      }
        
     }
@@ -179,22 +192,24 @@ else
 start();
 
 
-function hideme(st)
+function hideme(st,FLAG)
 {let fn1=""
 var zg =  /^[0-9a-zA-Z]*$/;
 
 for(let i=0;i<st.length;i++)
 {
-  if (zg.test(st[i])&&zg.test(st[i+1])&&zg.test(st[i+2])&&zg.test(st[i+3]))
+  if (FLAG==1){
+   
+   if (zg.test(st[i])&&zg.test(st[i+1])&&zg.test(st[i+2])&&zg.test(st[i+3]))
   {
    fn1=st.substr(st.indexOf(st[i]+st[i+1]+st[i+2]+st[i+3]+st[i+4]),5);
 st=st.replace(fn1,"*****");
   }
-  
+  }
 
 if (st[i]==("账"))
-{fn1=st.substr(i+2,5);
-st=st.replace(fn1,"*****");}
+{fn1=st.substr(i+2,15);
+st=st.replace(fn1,"************");}
 
 if (st[i]==("京"))
 {fn1=st.substr(i,1);
@@ -209,7 +224,39 @@ return st
 
 }
 
+function AddFirstCode(newContent){
+let ShareCode=[]
+if (process.env.SYNCURL.indexOf('CASH.js')>=0)
+ShareCode=ASShareCodes;
 
+else if (process.env.SYNCURL.indexOf('DJDC.js')>=0)
+ShareCode=DCShareCodes;
+
+else if  (process.env.SYNCURL.indexOf('DJMC.js')>=0)
+ShareCode=MCShareCodes;
+
+else if  (process.env.SYNCURL.indexOf('DJMH.js')>=0)
+ShareCode=MHShareCodes;
+
+
+else if  (process.env.SYNCURL.indexOf('DJNC.js')>=0)
+ShareCode=NCShareCodes;
+
+else if  (process.env.SYNCURL.indexOf('DJZD.js')>=0)
+ShareCode=ZDShareCodes;
+
+else if  (process.env.SYNCURL.indexOf('XJJC.js')>=0)
+ShareCode=JCShareCodes;
+
+
+if (!ShareCode[0])
+  return newContent
+
+
+newContent =newContent.replace(`$.newShareCodes = []`,`$.newShareCodes=`+JSON.stringify(ShareCode));
+console.log(newContent)
+return newContent
+}
 
 
 
