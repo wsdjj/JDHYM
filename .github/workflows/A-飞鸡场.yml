@@ -20,7 +20,7 @@ jobs:
         run: pip install -r C.TXT
         
       - name: '-' 
-        run: python3 ./-/Fenji.py
+        run: python3 Untitled_1.py
         env:
             DJJ_TELE_COOKIE: ${{ secrets.DJJ_TELE_COOKIE }}
             airplay_data: ${{ secrets.airplay_data }}
