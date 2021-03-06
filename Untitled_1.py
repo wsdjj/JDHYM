@@ -21,7 +21,12 @@ bdlist=[]
 
 djj_bark_cookie=''
 
-djj_tele_cookie=''
+djj_tele_cookie=''''
+http://freeperson.xyz/user
+
+{"Accept": "email=3461109828%40qq.com; expire_in=1615604129; ip=a723ae018ce38ff06870fd9ef7e27d45; key=47c1b72bc7dde5c8c348f3e11428738abb390a3b7f678; uid=4284; pop=yes; mtauth=f6c37deeecf1e87a6345b705da83040c; PHPSESSID=6l7mm1m0mhqukbovb1agils7co; __cfduid=da574e2831db1b80288e3846901b23d801614998311",}
+
+''''
 
 
 
