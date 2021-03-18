@@ -61,11 +61,6 @@ let MHShareCodes=[""];//京东盲盒
 let ZDShareCodes=[""];//种豆
 let ASShareCodes=[""];//签到领现金
 
-
-DCShareCodes=["ce6b52b21760477f8a42a9e2ec46b880","12044807ae824bdd959b04742e70d98c","5a3968d83cf64ae5bc7654dba97491ed"];//东东农场
-MCShareCodes=["MTAxODc2NTEzNDAwMDAwMDAyMzM1NjE5Nw==","MTAxODc2NTEzOTAwMDAwMDAzMjI4ODY4OQ==","MTAxODc2NTEzMzAwMDAwMDAyODc1MjE1Nw==","MTAxODc2NTEzMjAwMDAwMDAyMzMzNjY5Nw=="];//萌宠
-ZDShareCodes=["olmijoxgmjutz4qhfijm5qqw2f3a74jllypjh6q","mlrdw3aw26j3wwwoicqyovyesf2v2xjdqgjcv2q"];//种豆
-
 //格式["AA","BB","CC"]
 
 //当前互助码活动(动态更新中):['NC@京东农场', 'AS@签到领现金', 'MC@萌宠', 'JC@惊喜工厂', 'DC@京东工厂', 'ZD@种豆', 'MH@盲盒']
