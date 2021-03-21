@@ -8,7 +8,7 @@ on:
     #     branches:
     #         - main
     schedule:
-        - cron: " 10 1,4,10 * * *"
+        - cron: "10 1,4,10 * * *"
     workflow_dispatch:
 jobs:
     build:
@@ -23,7 +23,7 @@ jobs:
             - name: npm install
               run: |
                   npm install
-            - name: '运行 【京西农场】'
+            - name: "运行 【京西农场】"
               run: |
                   node  Ponysitters_Club_Season.js
               env:
