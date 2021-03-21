@@ -30,10 +30,10 @@ jobs:
           npm install
             - name: '运行 【京西农场】'
               run: |
-                  node Ponysitters_Club_Season.js
+                  node /The.Flash/The.Flash/j0xn0c.js
               env:
                   JD_COOKIE: ${{ secrets.JD_COOKIE }}
-                  SYNCURL: /The.Flash/The.Flash/j0xn0c.js
+                 
                   JXNCTOKENS: ${{ secrets.JXNCTOKENS }}
                   SCKEY: ${{ secrets.SCKEY }}
                   BARK_PUSH: ${{ secrets.BARK_PUSH }}
