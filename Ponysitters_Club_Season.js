@@ -60,6 +60,10 @@ let MCShareCodes=[""];//萌宠
 let MHShareCodes=[""];//京东盲盒
 let ZDShareCodes=[""];//种豆
 let ASShareCodes=[""];//签到领现金
+let MCShareCodes=["MTAxODc2NTE0NzAwMDAwMDAzMzU0NDM5MQ=="]
+let ZDShareCodes=["e7lhibzb3zek2o5q3nc6sb5bupsxratjxhviuey"]
+let NCShareCodes=["c3ca923bd2984393af37a589c3b7085c"]
+
 
 //格式["AA","BB","CC"]
 
