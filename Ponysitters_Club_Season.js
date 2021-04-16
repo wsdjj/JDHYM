@@ -60,7 +60,10 @@ let MCShareCodes=[""];//萌宠
 let MHShareCodes=[""];//京东盲盒
 let ZDShareCodes=[""];//种豆
 let ASShareCodes=[""];//签到领现金
-["MTAxODc2NTE0NzAwMDAwMDAzMzU0NDM5MQ==","e7lhibzb3zek2o5q3nc6sb5bupsxratjxhviuey","c3ca923bd2984393af37a589c3b7085c"]
+NCShareCodes=["c3ca923bd2984393af37a589c3b7085c"]
+MCShareCodes=["MTAxODc2NTE0NzAwMDAwMDAzMzU0NDM5MQ=="]   
+ZDShareCodes=["e7lhibzb3zek2o5q3nc6sb5bupsxratjxhviuey"]             
+ 
 
 
 //格式["AA","BB","CC"]
