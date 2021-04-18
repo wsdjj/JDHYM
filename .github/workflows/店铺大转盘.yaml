@@ -5,7 +5,7 @@ on:
     #     branches:
     #         - main
     schedule:
-        - cron: "16 6 * * *"
+        - cron: "3 2,14,16 * * *"
     workflow_dispatch:
 jobs:
     build:
@@ -20,12 +20,12 @@ jobs:
             - name: npm install
               run: |
                   npm install
-            - name: "运行 【店铺关注有礼】"
+            - name: "运行 【店铺大转盘】"
               run: |
-                  node monk_shop_follow_sku.js
+                  node monk_shop_lottery.js
               env:
                   JD_COOKIE: ${{ secrets.JD_COOKIE }}
-                  SYNCURL: /The.Flash/The.Flash/monk_shop_follow_sku.js
+                  SYNCURL: /The.Flash/The.Flash/monk_shop_lottery.js
                   BARK_PUSH: ${{ secrets.BARK_PUSH }}
                   PUSH_KEY: ${{ secrets.PUSH_KEY }}
                   TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
