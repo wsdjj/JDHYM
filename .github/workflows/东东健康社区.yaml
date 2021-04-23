@@ -1,11 +1,11 @@
-name: 东东健康社区
+name: 店铺关注有礼
 
 on:
     # push:
     #     branches:
     #         - main
     schedule:
-        - cron: "15 14,17 * * *"
+        - cron: "15 7 * * *"
     workflow_dispatch:
 jobs:
     build:
@@ -20,12 +20,12 @@ jobs:
             - name: npm install
               run: |
                   npm install
-            - name: "运行 【东东健康社区】"
+            - name: "运行 【店铺关注有礼】"
               run: |
                   node Ponysitters_Club_Season.js
               env:
                   JD_COOKIE: ${{ secrets.JD_COOKIE }}
-                  SYNCURL: /The.Flash/The.Flash/jd_health.js
+                  SYNCURL: /The.Flash/The.Flash/monk_shop_follow_sku.js
                   SCKEY: ${{ secrets.SCKEY }}
                   BARK_PUSH: ${{ secrets.BARK_PUSH }}
                   PUSH_KEY: ${{ secrets.PUSH_KEY }}
