@@ -5,7 +5,7 @@ on:
     #     branches:
     #         - main
     schedule:
-        - cron: "15 5,14 * * *"
+        - cron: "15 */3 * * *"
     workflow_dispatch:
 jobs:
     build:
@@ -25,7 +25,7 @@ jobs:
                   node Ponysitters_Club_Season.js
               env:
                   JD_COOKIE: ${{ secrets.JD_COOKIE }}
-                  SYNCURL: /The.Flash/The.Flash/jd_health.js
+                  SYNCURL: /The.Flash/The.Flash/z_health_community.js
                   SCKEY: ${{ secrets.SCKEY }}
                   BARK_PUSH: ${{ secrets.BARK_PUSH }}
                   PUSH_KEY: ${{ secrets.PUSH_KEY }}
