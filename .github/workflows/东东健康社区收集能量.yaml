@@ -1,28 +1,30 @@
 name: 东东健康社区收集能量
 
 on:
-    # push:
-    #     branches:
-    #         - main
+    workflow_dispatch:
     schedule:
         - cron: "25 * * * *"
-    workflow_dispatch:
+    watch:
+        types: [started]
+    repository_dispatch:
+        types: jd_health_collect
+
 jobs:
     build:
         runs-on: ubuntu-latest
-
+        if: github.event.repository.owner.id == github.event.sender.id
         steps:
             - uses: actions/checkout@v1
-            - name: Use Node.js 10.x
+            - name: Use Node.js 15.x
               uses: actions/setup-node@v1
               with:
-                  node-version: 10.x
+                  node-version: 15.x
             - name: npm install
               run: |
                   npm install
-            - name: "运行 【东东健康社区收集能量】"
+            - name: "运行 【JD健康社区收集】"
               run: |
-                  node Ponysitters_Club_Season.js
+                  node onlyOneExecute.js
               env:
                   JD_COOKIE: ${{ secrets.JD_COOKIE }}
                   SYNCURL: /The.Flash/The.Flash/jd_health_collect.js
