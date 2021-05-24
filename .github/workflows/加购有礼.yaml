@@ -28,6 +28,7 @@ jobs:
                   SYNCURL: /The.Flash/The.Flash/monk_shop_add_to_car.js
                   SCKEY: ${{ secrets.SCKEY }}
                   BARK_PUSH: ${{ secrets.BARK_PUSH }}
+                  QYWX_AM: ${{ secrets.QYWX_AM }}
                   PUSH_KEY: ${{ secrets.PUSH_KEY }}
                   TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
                   TG_USER_ID: ${{ secrets.TG_USER_ID }}
