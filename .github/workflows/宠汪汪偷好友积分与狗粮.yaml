@@ -34,6 +34,7 @@ jobs:
                   SYNCURL: /The.Flash/The.Flash/j0y_st0eal.js
                   SCKEY: ${{ secrets.SCKEY }}
                   BARK_PUSH: ${{ secrets.BARK_PUSH }}
+                  QYWX_AM: ${{ secrets.QYWX_AM }}
                   PUSH_KEY: ${{ secrets.PUSH_KEY }}
                   TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
                   TG_USER_ID: ${{ secrets.TG_USER_ID }}
