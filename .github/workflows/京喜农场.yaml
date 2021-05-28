@@ -56,6 +56,8 @@ jobs:
           DD_BOT_SECRET: ${{ secrets.DD_BOT_SECRET }}
           #企业微信推送
           QYWX_KEY: ${{ secrets.QYWX_KEY }}
+          QYWX_AM: ${{ secrets. QYWX_AM }}
+
           #iGot推送
           IGOT_PUSH_KEY: ${{ secrets.IGOT_PUSH_KEY }}
           #酷推(Cool Push)推送
